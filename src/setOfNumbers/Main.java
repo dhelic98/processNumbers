@@ -40,6 +40,14 @@ public class Main {
 
 	}
 
+                private static void printStatus(ArrayList<Integer> list) {
+		System.out.println("Status for input is:\nLowest number: " + minValue(list) + "\nLargest number: "
+				+ maxValue(list) + "\nSum of numbers is: " + sumValues(list) + "\nAverage is: "
+				+ getAverage(list) + "\nUnique numbers are: " + getUnique(list) + "\nList sorted: "
+				+ getSortedList(list));
+
+	}
+
 	private static void addNumbersToArray(ArrayList<Integer> list) {
 		list.add(getNumberFromUser());
 
