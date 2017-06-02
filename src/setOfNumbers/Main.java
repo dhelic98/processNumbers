@@ -29,7 +29,8 @@ public class Main {
 				}
 			}
 
-			printStatus(listOfInts);
+			 printStatus(listOfInts);
+			
 
 		} catch (Exception e) {
 			System.out.println("Generic unexpected exception");
@@ -48,6 +49,32 @@ public class Main {
 		return Integer.parseInt(uInput.nextLine().trim());
 	}
 
+	private static int minValue(ArrayList<Integer> list){
+		int min = list.get(0);
+		for(int i = 0; i < list.size(); i++){
+			if(min > list.get(i)){
+				min = list.get(i);
+			}
+		}
+		return min;
+	}
 	
+	private static int maxValue(ArrayList<Integer> list){
+		int max = list.get(0);
+		for(int i = 0; i < list.size(); i++){
+			if(max < list.get(i)){
+				max = list.get(i);
+			}
+		}
+		return max;
+	}
+	
+	private static int sumValues(ArrayList<Integer> list){
+		int sum = 0;
+		for(int i = 0; i < list.size(); i++){
+			sum += list.get(i);
+		}
+		return sum;
+	}
 
 }
