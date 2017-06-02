@@ -1,11 +1,10 @@
 package setOfNumbers;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -29,8 +28,9 @@ public class Main {
 				}
 			}
 
-			 printStatus(listOfInts);
+		printStatus(listOfInts);
 			
+
 
 		} catch (Exception e) {
 			System.out.println("Generic unexpected exception");
@@ -50,13 +50,34 @@ public class Main {
 
 	private static void addNumbersToArray(ArrayList<Integer> list) {
 		list.add(getNumberFromUser());
-
 	}
 
 	private static int getNumberFromUser() {
 		return Integer.parseInt(uInput.nextLine().trim());
 	}
 
+
+	private static double prosjekBrojeva(ArrayList<Integer> list) {
+		long sum = 0;
+		int count = 0;
+		for (int element : list) {
+			sum += element;
+		}
+		count = list.size();
+		if (count == 0)
+			return 0;
+		return sum * 1.0 / count;
+	}
+
+	private static String getUnique(ArrayList<Integer> list) {
+		List<Integer> listDistinct = list.stream().distinct().collect(Collectors.toList());
+		return listDistinct.toString();
+	}
+
+	private static String sortArray(ArrayList<Integer> list) {
+		list.sort(null);
+		return list.toString();
+=======
 	private static int minValue(ArrayList<Integer> list){
 		int min = list.get(0);
 		for(int i = 0; i < list.size(); i++){
@@ -83,6 +104,7 @@ public class Main {
 			sum += list.get(i);
 		}
 		return sum;
+
 	}
 
 }
