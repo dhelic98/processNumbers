@@ -28,13 +28,23 @@ public class Main {
 				}
 			}
 
-			System.out.println(prosjekBrojeva(listOfInts));
+		printStatus(listOfInts);
+			
+
 
 		} catch (Exception e) {
 			System.out.println("Generic unexpected exception");
 			main(args);
 
 		}
+
+	}
+
+                private static void printStatus(ArrayList<Integer> list) {
+		System.out.println("Status for input is:\nLowest number: " + minValue(list) + "\nLargest number: "
+				+ maxValue(list) + "\nSum of numbers is: " + sumValues(list) + "\nAverage is: "
+				+ getAverage(list) + "\nUnique numbers are: " + getUnique(list) + "\nList sorted: "
+				+ getSortedList(list));
 
 	}
 
@@ -45,6 +55,7 @@ public class Main {
 	private static int getNumberFromUser() {
 		return Integer.parseInt(uInput.nextLine().trim());
 	}
+
 
 	private static double prosjekBrojeva(ArrayList<Integer> list) {
 		long sum = 0;
@@ -66,6 +77,34 @@ public class Main {
 	private static String sortArray(ArrayList<Integer> list) {
 		list.sort(null);
 		return list.toString();
+=======
+	private static int minValue(ArrayList<Integer> list){
+		int min = list.get(0);
+		for(int i = 0; i < list.size(); i++){
+			if(min > list.get(i)){
+				min = list.get(i);
+			}
+		}
+		return min;
+	}
+	
+	private static int maxValue(ArrayList<Integer> list){
+		int max = list.get(0);
+		for(int i = 0; i < list.size(); i++){
+			if(max < list.get(i)){
+				max = list.get(i);
+			}
+		}
+		return max;
+	}
+	
+	private static int sumValues(ArrayList<Integer> list){
+		int sum = 0;
+		for(int i = 0; i < list.size(); i++){
+			sum += list.get(i);
+		}
+		return sum;
+
 	}
 
 }
