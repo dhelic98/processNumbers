@@ -43,8 +43,8 @@ public class Main {
                 private static void printStatus(ArrayList<Integer> list) {
 		System.out.println("Status for input is:\nLowest number: " + minValue(list) + "\nLargest number: "
 				+ maxValue(list) + "\nSum of numbers is: " + sumValues(list) + "\nAverage is: "
-				+ getAverage(list) + "\nUnique numbers are: " + getUnique(list) + "\nList sorted: "
-				+ getSortedList(list));
+				+ prosjekBrojeva(list) + "\nUnique numbers are: " + getUnique(list) + "\nList sorted: "
+				+ sortArray(list));
 
 	}
 
@@ -77,7 +77,7 @@ public class Main {
 	private static String sortArray(ArrayList<Integer> list) {
 		list.sort(null);
 		return list.toString();
-=======
+
 	private static int minValue(ArrayList<Integer> list){
 		int min = list.get(0);
 		for(int i = 0; i < list.size(); i++){
