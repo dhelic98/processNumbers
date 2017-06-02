@@ -77,6 +77,7 @@ public class Main {
 	private static String sortArray(ArrayList<Integer> list) {
 		list.sort(null);
 		return list.toString();
+	}
 
 	private static int minValue(ArrayList<Integer> list){
 		int min = list.get(0);
